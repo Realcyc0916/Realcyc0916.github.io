@@ -130,9 +130,11 @@
           <div class="nav-menu">
             
               
-                <a class="nav-menu-item" href="/feat">特性测试</a>
+                <a class="nav-menu-item" href="/life">学习·生活</a>
               
-                <a class="nav-menu-item" href="/base">基础测试</a>
+                <a class="nav-menu-item" href="/note">数理笔记</a>
+              
+                <a class="nav-menu-item" href="/OI">OI学习</a>
               
             
             
@@ -143,7 +145,7 @@
     </div>
     <div class="body">
       
-  <div class="wall wall-category--plain">
+  <div class="wall wall-category">
     <div class="wall-main">
       <div class="wall-category-title">
         <div class="title-icon"
@@ -152,7 +154,7 @@
       </div>
       <div class="wall-category-description"></div>
       <div class="wall-category-tags">
-        <div id="tags-outer"></div>
+        <div id="tags-outer"><canvas width="500" height="500" id="tagCanvas"><canvas></div>
       </div>
     </div>
   </div>
@@ -162,7 +164,61 @@
   
   <div class="post-card">
     <div class="post__head">
-      <a href="/2025/02/03/hello-world/" class="post-title hover-line">未命名</a>
+      <a href="/2025/02/04/CF245E/" class="post-title hover-line">未命名</a>
+      
+    </div>
+    <div class="post__body">
+      
+      <div class="post-excerpt"></div>
+    </div>
+    <div class="post__foot">
+      <div class="post-tags">
+  
+
+</div>
+    </div>
+  </div>
+
+  
+  <div class="post-card">
+    <div class="post__head">
+      <a href="/2025/02/04/SP10620/" class="post-title hover-line">未命名</a>
+      
+    </div>
+    <div class="post__body">
+      
+      <div class="post-excerpt"></div>
+    </div>
+    <div class="post__foot">
+      <div class="post-tags">
+  
+
+</div>
+    </div>
+  </div>
+
+  
+  <div class="post-card">
+    <div class="post__head">
+      <a href="/2025/02/04/P7745/" class="post-title hover-line">未命名</a>
+      
+    </div>
+    <div class="post__body">
+      
+      <div class="post-excerpt"></div>
+    </div>
+    <div class="post__foot">
+      <div class="post-tags">
+  
+
+</div>
+    </div>
+  </div>
+
+  
+  <div class="post-card">
+    <div class="post__head">
+      <a href="/2025/02/04/P7757/" class="post-title hover-line">未命名</a>
       
     </div>
     <div class="post__body">
@@ -359,6 +415,35 @@
     
     <script src="/js/copy-code.js"></script>
     
+  
+    <script type="text/javascript"
+            charset="utf-8"
+            src="/js/tagcanvas.min.js"></script>
+    <script type = "text/javascript">
+        window.onload = function() {
+            try {
+                TagCanvas.Start('tagCanvas', '', {
+                    outlineThickness: 1,
+                    maxSpeed: 0.03,
+                    // freezeActive: true,
+                    // freezeDecel: true,
+                    textColour: null,
+                    textColour: null,
+                    outlineColour: "#aaa",
+                    weight: true,
+                    padding: 4,
+                    // clickToFront: 200,
+                    fadIn: 200,
+                    // pinchZoom: true,
+                    wheelZoom: false,
+                    initial: [0.1, -0.03]
+                });
+            } catch (e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('tags-outer').style.display = 'none';
+            }
+        };
+    </script>
   
 
   </body>
