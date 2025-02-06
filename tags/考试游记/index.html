@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>
       
-        CF245E题解 | Realcyc.me
+        考试游记 | Realcyc.me
       
     </title>
     <meta name="description" content="" />
@@ -58,8 +58,9 @@
           href='/css/layout.css' />
     
     
-  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
-  
+  <link rel="stylesheet"
+        type="text/css"
+        href="/css/category.css" />
 
   <meta name="generator" content="Hexo 7.3.0"></head>
   <body>
@@ -146,112 +147,28 @@
     </div>
     <div class="body">
       
-  <article class="post-content">
-    <div class="post-inner">
-      <div class="post-content__head">
-        <div class="post-title">CF245E题解</div>
-        <div class="post-info">
-          
-  <a href="/tags/%E9%A2%98%E8%A7%A3/" class="post-tag">#题解</a>
-
-
-          <span class="post-date">2025-02-04</span>
-        </div>
-      </div>
+  <div class="tag-page-title">#考试游记</div>
+  <div class="post-list">
+    
+  
+  <div class="post-card">
+    <div class="post__head">
+      <a href="/2025/02/06/CSP2021/" class="post-title hover-line">CSP2021游记</a>
       
-      <div class="post-content__body">
-        
-          <div class="post-gallery">
-            
-          </div>
-        
-        <p><del>第一眼看还以为是DP呢。</del></p>
-<p>仔细一看，原来是道水题。</p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个带有 “+” 与 “-“ 的字符串，表示这个叫做 “Binary Cat” 的咖啡厅的人进出情况。</p>
-<p>现在你是个保安，你要根据给你的字符串求出你见到了多少人。</p>
-<p>“+” 代表进入；”-“ 代表出去。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>用两个变量来存在咖啡厅中与咖啡厅外的人，根据题意模拟：</p>
-<p>如果读到 “+” 则有一个<strong>原本在咖啡厅外的人</strong>进入了咖啡厅。</p>
-<p>反之，读到 “-“ 则有一个<strong>原本在咖啡厅内的人</strong>出了咖啡厅。</p>
-<p><strong>特别地，我们需要注意，在一开始，咖啡厅内或外可能出现没人的情况，则是新来的人</strong></p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>string s;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> in = <span class="hljs-number">0</span>, out = <span class="hljs-number">0</span>, len = <span class="hljs-number">0</span>;<br>    cin &gt;&gt; s;<br>    len = s.<span class="hljs-built_in">length</span>();<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)&#123;<br>        <span class="hljs-keyword">if</span>(s[i] == <span class="hljs-string">&#x27;+&#x27;</span>)&#123;<br>            in++;<br>            <span class="hljs-keyword">if</span>(out) out--;<span class="hljs-comment">//特判此时咖啡厅外已经有人</span><br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s[i] == <span class="hljs-string">&#x27;-&#x27;</span>)&#123;<br>            out++;<br>            <span class="hljs-keyword">if</span>(in) in--; <span class="hljs-comment">//特判此时咖啡内外已经有人</span><br>        &#125;<br>    &#125;<br>    cout &lt;&lt; in + out &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-      </div>
     </div>
-    
-      <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script>
-      <script>
-        if (window.mermaid) {
-          mermaid.initialize({"startOnload":true});
-        }
-      </script>
-    
-  </article>
-  <div class="post__foot">
-    
-      <div class="like-author">
-  <input type="checkbox" id="likeCode" />
-  <div class="author-face">
-    <img height="100px"
-         width="100px"
-         id="front-face"
-         alt="author face"
-         src="/assets/author-face.jpg" />
-    <img height="100px"
-         width="100px"
-         id="back-face"
-         alt="like code"
-         src="/assets/pay-code.jpg" />
+    <div class="post__body">
+      
+      <div class="post-excerpt"></div>
+    </div>
+    <div class="post__foot">
+      <div class="post-tags">
+  <a href="/tags/%E8%80%83%E8%AF%95%E6%B8%B8%E8%AE%B0/" class="post-tag">#考试游记</a>
+
+</div>
+    </div>
   </div>
-  <div class="like-text">“给作者倒杯卡布奇诺”</div>
-  <label for="likeCode" class="like-btn">
-    <svg viewBox="0 0 1024 1024"
-         width="20px"
-         style="margin-right: 10px"
-         height="20px">
-      <path d="M466.88 908.96L113.824 563.296a270.08 270.08 0 0 1 0-387.392c108.8-106.56 284.896-106.56 393.696 0 1.504 1.472 2.976 2.944 4.448 4.48 1.472-1.536 2.944-3.008 4.448-4.48 108.8-106.56 284.896-106.56 393.696 0a269.952 269.952 0 0 1 34.016 347.072l-387.392 385.6a64 64 0 0 1-89.92 0.384z" p-id="13650" fill="#ee4242" />
-    </svg>
-    喜欢作者
-  </label>
-</div>
 
-    
-    <div class="post-nav">
-  
-    <a class="post-nav-item-left" href="/2025/02/04/P7745/">
-      <div class="text-align">
-        <svg t="1670570876164"
-             class="icon"
-             viewBox="0 0 1024 1024"
-             width="16"
-             height="16">
-          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
-        </svg>
-        <span class="text-small">上一篇</span>
-      </div>
-      <div>洛谷P7745题解</div>
-    </a>
-  
-  <div class="vhr"></div>
-  
-    <a class="post-nav-item-right" href="/2025/02/04/SP10620/">
-      <div class="text-align">
-        <span class="text-small">下一篇</span>
-        <svg t="1670570876164"
-             class="icon"
-             viewBox="0 0 1024 1024"
-             transform="scale(-1,-1)"
-             width="16"
-             height="16">
-          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
-        </svg>
-      </div>
-      SP10620题解
-    </a>
-  
-</div>
 
-    
     
   </div>
 
@@ -427,7 +344,6 @@
     
     <script src="/js/copy-code.js"></script>
     
-  
-
+    
   </body>
 </html>
