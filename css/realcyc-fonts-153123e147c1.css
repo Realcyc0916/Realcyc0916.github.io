@@ -1,0 +1,28 @@
+@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-regular-65f858911f93.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-bold-a070bc2be02f.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Pixel Digits";src:url("/fonts/realcyc/pixel-digits-77ba648f1b70.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+/* Reading text uses the original Source Han Serif outlines. */
+html,
+body {
+  font-family: "Realcyc Reading Serif", "Songti SC", "STSong", SimSun, serif;
+}
+
+.post-title {
+  font-family: "Realcyc Reading Serif", "Songti SC", "STSong", SimSun, serif;
+  font-weight: 700;
+}
+
+/* Only dates and page numbers use pixels: 8px glyphs at 2x size. */
+.post-date,
+.line-date-tag,
+.archive-item__date,
+.page-number {
+  font-family: "Realcyc Pixel Digits", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+
+/* No universal child selector: code and MathJax keep their own fonts. */
