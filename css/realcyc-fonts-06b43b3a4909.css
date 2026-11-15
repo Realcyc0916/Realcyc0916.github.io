@@ -1,6 +1,7 @@
 @font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-regular-65f858911f93.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
 @font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-bold-a070bc2be02f.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
 @font-face{font-family:"Realcyc Pixel Digits";src:url("/fonts/realcyc/pixel-digits-77ba648f1b70.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Pixel Title";src:url("/fonts/realcyc/pixel-title-0ff8d1f8f38d.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
 /* Reading text uses the original Source Han Serif outlines. */
 html,
 body {
@@ -26,3 +27,49 @@ body {
 }
 
 /* No universal child selector: code and MathJax keep their own fonts. */
+
+/* Homepage display title: 8px pixel glyphs at integer multiples. */
+.wall-index .wall-title {
+  font-family: "Realcyc Pixel Title", monospace;
+  font-size: 72px;
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.nav .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 0;
+  font-family: "Realcyc Reading Serif", "Songti SC", "STSong", SimSun, serif;
+  font-size: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.realcyc-nav-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1023px) {
+  .nav .nav-logo {
+    max-width: calc(100vw - 190px);
+    font-size: 16px;
+  }
+
+  .nav .nav-right {
+    position: absolute;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wall-index .wall-title { font-size: 40px; }
+}
+
+@media screen and (max-width: 359px) {
+  .wall-index .wall-title { font-size: 32px; }
+}
