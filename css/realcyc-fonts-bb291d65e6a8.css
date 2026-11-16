@@ -1,7 +1,9 @@
-@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-regular-59c4be21683a.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
-@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-bold-5eb8b45080e3.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-regular-fa67c9cc76be.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Reading Serif";src:url("/fonts/realcyc/serif-bold-5ff857e76009.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Home Serif";src:url("/fonts/realcyc/serif-home-regular-5f4a36e0e8b0.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Home Serif";src:url("/fonts/realcyc/serif-home-bold-33ddf3e93bd9.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
 @font-face{font-family:"Realcyc Pixel Digits";src:url("/fonts/realcyc/pixel-digits-77ba648f1b70.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
-@font-face{font-family:"Realcyc Pixel Title";src:url("/fonts/realcyc/pixel-title-0ff8d1f8f38d.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Realcyc Handwriting";src:url("/fonts/realcyc/handwriting-title-c60508981320.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
 /* Reading text uses the original Source Han Serif outlines. */
 html,
 body {
@@ -28,14 +30,20 @@ body {
 
 /* No universal child selector: code and MathJax keep their own fonts. */
 
-/* Homepage display title: 8px pixel glyphs at integer multiples. */
+body[data-realcyc-home],
+body[data-realcyc-home] .post-title,
+body[data-realcyc-home] .nav .nav-logo {
+  font-family: "Realcyc Home Serif", "Realcyc Reading Serif", "Songti SC", "STSong", SimSun, serif;
+}
+
+/* The title is independent of the browser tab's Chinese site name. */
 .wall-index .wall-title {
-  font-family: "Realcyc Pixel Title", monospace;
-  font-size: 72px;
-  font-weight: 400;
+  font-family: "Realcyc Handwriting", cursive;
+  font-size: 96px;
+  font-weight: 500;
   font-synthesis: none;
   letter-spacing: 0;
-  line-height: 1.2;
+  line-height: 1.35;
 }
 
 .nav .nav-logo {
@@ -67,9 +75,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .wall-index .wall-title { font-size: 40px; }
+  .wall-index .wall-title { font-size: 64px; }
 }
 
 @media screen and (max-width: 359px) {
-  .wall-index .wall-title { font-size: 32px; }
+  .wall-index .wall-title { font-size: 56px; }
 }

@@ -1,0 +1,96 @@
+# Generated cache rules for content-addressed blog resources
+/assets/realcyc/apple-touch-icon-9e26c41ddd96.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/bold-c04fbd9d371f.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/core-26f894bbb333.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/core-28b13b12ea05.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/favicon-16x16-75df457ba8d5.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/favicon-32x32-c5f0a40239b8.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-code-511a6786d815.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-email-ae7e05289e16.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-link-f7eb51064179.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-link_-4dda9853dfb3.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-pi-60a617decf7c.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/icon-sunrise-87355c54384d.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/logo-79dd19cce69b.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/logo-github-ac44a07d2189.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/logo-zh-c1eb771bf4cc.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/matts-a5c480f6ae27.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/normal-4b3c8649e1d1.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/normal-99b0ce8f1dd5.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/notice-b249ed5fa51d.txt
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/styles-2cd7f0967fd3.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/styles-5f9d90a76189.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/styles-76a1be7aa9e0.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/realcyc/styles-b0a5b26f4e89.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/realcyc-fonts-bb291d65e6a8.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/handwriting-title-c60508981320.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/pixel-digits-77ba648f1b70.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/serif-bold-5ff857e76009.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/serif-home-bold-33ddf3e93bd9.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/serif-home-regular-5f4a36e0e8b0.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/realcyc/serif-regular-fa67c9cc76be.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/about-598c5446cef6.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/author-face-05b270b1bf44.webp
+  Cache-Control: public, max-age=31536000, immutable
