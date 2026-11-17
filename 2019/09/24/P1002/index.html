@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+    
+    
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://registry.npmmirror.com; style-src 'self' 'unsafe-inline' https://registry.npmmirror.com; img-src 'self' data: https:; font-src 'self' data: https://registry.npmmirror.com; connect-src 'self'; frame-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"/>
+    <meta name="referrer" content="strict-origin-when-cross-origin"/>
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"/>
+    
+    
+    
+    
+    
+    <title>
+      
+        P1002 题解 | cyc的个人小站
+      
+    </title>
+    
+    <meta name="description" content=""/>
+    
+    <meta name="keywords" content="题解"/>
+    <link rel="canonical" href="https:&#x2F;&#x2F;realcyc.me&#x2F;2019&#x2F;09&#x2F;24&#x2F;P1002&#x2F;"/>
+    
+    
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="&#x2F;assets&#x2F;realcyc&#x2F;apple-touch-icon-9e26c41ddd96.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="&#x2F;assets&#x2F;realcyc&#x2F;favicon-32x32-c5f0a40239b8.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="&#x2F;assets&#x2F;realcyc&#x2F;favicon-16x16-75df457ba8d5.png"/>
+    
+    
+      <link rel="mask-icon"
+            href="&#x2F;assets&#x2F;realcyc&#x2F;logo-79dd19cce69b.svg"
+            color="#fcfcfb"/>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="P1002 题解"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content="https://realcyc.me/2019/09/24/P1002/"/>
+    <meta property="og:site_name" content="cyc的个人小站"/>
+    
+    <meta property="og:locale" content="zh_CN"/>
+    <meta property="og:image" content="https://realcyc.me/images/about-598c5446cef6.webp"/>
+    
+      <meta property="article:published_time" content="2019-09-23T16:10:10.456Z"/>
+      <meta property="article:modified_time" content="2026-11-17T06:33:23.769Z"/>
+    
+    
+      <meta property="article:tag" content="题解"/>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="P1002 题解"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image" content="https://realcyc.me/images/about-598c5446cef6.webp"/>
+    
+    <script>
+      window.__THEME_MODE__ = "light";
+      (function () {
+        var m = window.__THEME_MODE__;
+        var ts = 18;
+        var te = 6;
+        var o = null;
+        try { o = localStorage.getItem('theme-override'); } catch (e) {}
+        var t;
+        if (o === 'light' || o === 'dark') {
+          t = o;
+        } else if (m === 'dark') {
+          t = 'dark';
+        } else if (m === 'auto') {
+          t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        } else if (m === 'time') {
+          var h = new Date().getHours();
+          t = ts > te ? (h >= ts || h < te ? 'dark' : 'light') : (h >= ts && h < te ? 'dark' : 'light');
+        } else {
+          t = 'light';
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+    
+      
+  <style>
+    @font-face {
+        font-family:'sourceHanSerif';
+        src: url("/assets/realcyc/normal-7e46296635db.woff2");
+        font-weight: normal;
+        font-display: swap;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:'sourceHanSerif';
+        src: url("/assets/realcyc/bold-93d22bef3127.woff2");
+        font-weight: bold;
+        font-display: swap;
+    }
+  </style>
+
+
+  
+  
+  <link rel="preload"
+        as="font"
+        type="font/woff2"
+        crossorigin
+        href="&#x2F;assets&#x2F;realcyc&#x2F;normal-7e46296635db.woff2"/>
+
+
+    
+    <link id="realcyc-fonts" rel="stylesheet" href="&#x2F;assets&#x2F;realcyc&#x2F;styles-9109ca326f94.css">
+    
+    
+  
+
+    
+    
+    <script type="application/ld+json">
+      
+        
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        {"@context":"https://schema.org","@type":"Article","headline":"P1002 题解","datePublished":"2019-09-24","dateModified":"2026-11-17","author":{"@type":"Person","name":"xC41"},"image":"https://realcyc.me/images/about-598c5446cef6.webp","keywords":"题解"}
+      
+    </script>
+  <meta name="generator" content="Hexo 7.3.0">
+</head>
+  <body>
+    
+      <div id="search-mask" style="display:none" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="search-main" id="search-main">
+    <div class="search__head">
+      <div class="search-form">
+        <svg t="1706347533072"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="7828"
+             width="20"
+             height="20">
+          <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829">
+          </path>
+        </svg>
+        <input id="search-input" placeholder="搜索文章" aria-label="搜索文章">
+        <svg t="1706361500528"
+             id="search-clear"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="4351"
+             width="20"
+             height="20">
+          <path d="M512 562.688l-264.2944 264.2944-50.688-50.688L461.312 512 197.0176 247.7056l50.688-50.688L512 461.312l264.2944-264.2944 50.688 50.688L562.688 512l264.2944 264.2944-50.688 50.688L512 562.688z" fill="#000" p-id="4352">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div class="search__body" id="search-result"></div>
+    <div class="search__foot"></div>
+  </div>
+</div>
+
+    
+    
+    <div class="head--sticky">
+      <div class="nav">
+        <a href="&#x2F;" class="nav-logo"><span class="realcyc-nav-name">cyc的个人小站</span></a>
+        <input id="navBtn" type="checkbox"/>
+        <div class="nav-right">
+          
+            <div class="search-outer"><div class="search" id="search-btn" role="button" tabindex="0" aria-label="搜索">
+  <svg t="1706347533072"
+       class="icon"
+       viewBox="0 0 1024 1024"
+       version="1.1"
+       xmlns="http://www.w3.org/2000/svg"
+       p-id="7828"
+       width="20"
+       height="20">
+    <path d="M685.6 660.336l155.152 155.168a16 16 0 0 1 0 22.624l-11.312 11.328a16 16 0 0 1-22.624 0l-158.528-158.544a289.792 289.792 0 0 1-165.152 51.36C322.336 742.256 192 611.904 192 451.12 192 290.336 322.336 160 483.136 160c160.784 0 291.12 130.336 291.12 291.136 0 82.112-33.984 156.272-88.672 209.2z m-202.464 33.92c134.272 0 243.12-108.848 243.12-243.12C726.256 316.848 617.408 208 483.136 208 348.848 208 240 316.848 240 451.136c0 134.272 108.848 243.12 243.136 243.12z" fill="#000000" p-id="7829"></path>
+  </svg>
+  <span>搜索</span>
+  <span class="search-shortcut-key">Ctrl K</span>
+</div></div>
+          
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深色模式">
+            <span class="theme-toggle__icon theme-toggle__icon--sun">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/></g></svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
+            </span>
+          </button>
+          <div class="nav-menu">
+            
+              
+                
+                  <a class="nav-menu-item" href="&#x2F;life">生活</a>
+                
+                  <a class="nav-menu-item" href="&#x2F;note">数理笔记</a>
+                
+                  <a class="nav-menu-item" href="&#x2F;OI">OI学习</a>
+                
+              
+            
+            
+            
+          </div>
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    
+    
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">P1002 题解</div>
+        <div class="post-info">
+          
+  <a href="&#x2F;tags&#x2F;%E9%A2%98%E8%A7%A3&#x2F;" class="post-tag">#题解</a>
+
+
+          <span class="post-date">2019-09-24</span>
+        </div>
+      </div>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <hr>
+<p>看到好多大佬用的搜索，本蒟蒻来个递推</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span><span class="hljs-comment">//万能头 2MB一个 嘿嘿 </span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<span class="hljs-comment">//命名空间 </span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-type">int</span> n,m,nn,mm,i,j;<span class="hljs-comment">//定义变量 </span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> f[<span class="hljs-number">100</span>][<span class="hljs-number">100</span>];<span class="hljs-comment">//定义二维数组[长][宽](其实[20][20]就可以了) </span><br>    cin&gt;&gt;n&gt;&gt;m&gt;&gt;nn&gt;&gt;mm;<span class="hljs-comment">//输入 </span><br>    nn++;<span class="hljs-comment">//找下一个元素×1 </span><br>    mm++;<span class="hljs-comment">//找下一个元素×2 </span><br>    n++;<span class="hljs-comment">//找下一个元素×3 </span><br>    m++;<span class="hljs-comment">//找下一个元素×4 </span><br>    <span class="hljs-built_in">memset</span>(f,<span class="hljs-number">0</span>,<span class="hljs-built_in">sizeof</span>(f));<span class="hljs-comment">//初始化数组 </span><br>    f[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>;<span class="hljs-comment">//递推 </span><br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>; i&lt;=n; i++) {<span class="hljs-comment">//行 </span><br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>; j&lt;=m; j++) {<span class="hljs-comment">//列 </span><br>            <span class="hljs-keyword">if</span>((<span class="hljs-built_in">abs</span>(i-nn)+<span class="hljs-built_in">abs</span>(j-mm)==<span class="hljs-number">3</span>)&amp;&amp;(i!=nn)&amp;&amp;(j!=mm)||(i==nn&amp;&amp;j==mm));<span class="hljs-comment">//判断距离 </span><br>            <span class="hljs-keyword">else</span> f[i][j]=f[i<span class="hljs-number">-1</span>][j]+f[i][j<span class="hljs-number">-1</span>];<span class="hljs-comment">//递推 </span><br>        }<br>    }<br>    cout&lt;&lt;f[n][m];<span class="hljs-comment">//输出 </span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//完美结束 </span><br>}<span class="hljs-comment">//再见rwr </span><br></code></pre></td></tr></table></figure>
+
+      </div>
+    </div>
+    
+  </article>
+  <div class="post__foot">
+    
+      <div class="like-author">
+  <input type="checkbox" id="likeCode" />
+  <div class="author-face">
+    <img height="100"
+         width="100"
+         id="front-face"
+         alt="author face"
+         src="&#x2F;images&#x2F;author-face-05b270b1bf44.webp" loading="lazy" decoding="async">
+    <img height="100"
+         width="100"
+         id="back-face"
+         alt="like code"
+         src="&#x2F;images&#x2F;pay-code.jpg" loading="lazy" decoding="async">
+  </div>
+  <div class="like-text">“给作者倒杯卡布奇诺”</div>
+  <label for="likeCode" class="like-btn">
+    <svg viewBox="0 0 1024 1024"
+         width="20"
+         style="margin-right: 10px"
+         height="20">
+      <path d="M466.88 908.96L113.824 563.296a270.08 270.08 0 0 1 0-387.392c108.8-106.56 284.896-106.56 393.696 0 1.504 1.472 2.976 2.944 4.448 4.48 1.472-1.536 2.944-3.008 4.448-4.48 108.8-106.56 284.896-106.56 393.696 0a269.952 269.952 0 0 1 34.016 347.072l-387.392 385.6a64 64 0 0 1-89.92 0.384z" p-id="13650" fill="#ee4242" />
+    </svg>
+    喜欢作者
+  </label>
+</div>
+
+    
+    <div class="post-nav">
+  
+    <a class="post-nav-item-left" href="&#x2F;2019&#x2F;10&#x2F;15&#x2F;SP27561&#x2F;">
+      <div class="text-align">
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+        <span class="text-small">上一篇</span>
+      </div>
+      <div>题解 SP27561</div>
+    </a>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="&#x2F;2019&#x2F;08&#x2F;28&#x2F;P1044&#x2F;">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
+        </svg>
+      </div>
+      P1044t题解
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+  <div class="foot-inner">
+    <div class="foot__head">
+      
+        <div class="foot-line">
+          <div class="matts">昨</div><div class="matts">夜</div><div class="matts">雨</div><div class="matts">疏</div><div class="matts">风</div><div class="matts">骤</div>
+        </div>
+      
+        <div class="foot-line">
+          <div class="matts">浓</div><div class="matts">睡</div><div class="matts">不</div><div class="matts">消</div><div class="matts">残</div><div class="matts">酒</div>
+        </div>
+      
+    </div>
+    <div class="foot__body">
+      
+        <div class="foot-item">
+          <div class="foot-item__head">朋友</div>
+          <div class="foot-item__body">
+            
+            
+              
+            
+            
+
+
+  
+  
+    <div class="foot-link-group">
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-link-f7eb51064179.svg" />
+            <a class="foot-link" target="_blank" href="https:&#x2F;&#x2F;github.com&#x2F;hooozen&#x2F;hexo-theme-tranquility" rel="noopener noreferrer noopener">Theme Tranquility</a>
+          </div>
+        
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-link-f7eb51064179.svg" />
+            <a class="foot-link" target="_blank" href="http:&#x2F;&#x2F;blog.dimeta.top" rel="noopener noreferrer noopener">砂纸鸽の小屋</a>
+          </div>
+        
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-link-f7eb51064179.svg" />
+            <a class="foot-link" target="_blank" href="https:&#x2F;&#x2F;aksrinstar.github.io" rel="noopener noreferrer noopener">Aksres&#39;s Blog</a>
+          </div>
+        
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-link_-4dda9853dfb3.svg" />
+            <a class="foot-link" href="mailto:cycace@icloud.com?subject&#x3D;申请https:&#x2F;&#x2F;realcyc.me的友链" rel="noopener noreferrer">申请友链</a>
+          </div>
+        
+      
+    </div>
+  
+
+
+          </div>
+        </div>
+      
+      
+        <div class="foot-item">
+          <div class="foot-item__head">账号</div>
+          <div class="foot-item__body">
+            
+
+
+  
+  
+    <div class="foot-link-group">
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;logo-github-ac44a07d2189.svg" />
+            <a class="foot-link" target="_blank" href="https:&#x2F;&#x2F;github.com&#x2F;Realcyc0916" rel="noopener noreferrer noopener">Realcyc</a>
+          </div>
+        
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;logo-zh-c1eb771bf4cc.svg" />
+            <a class="foot-link" target="_blank" href="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;YiCheeee" rel="noopener noreferrer noopener">xC41</a>
+          </div>
+        
+      
+        
+        
+      
+        
+        
+      
+    </div>
+  
+
+
+          </div>
+        </div>
+      
+      
+      <div class="foot-item">
+        <div class="foot-item__head">联系</div>
+        <div class="foot-item__body">
+          
+
+
+  
+  
+    <div class="foot-link-group">
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-email-ae7e05289e16.svg" />
+            <a class="foot-link" href="mailto:air7367@outlook.com" rel="noopener noreferrer">air7367@outlook.com</a>
+          </div>
+        
+      
+        
+        
+          <div class="text">
+            <img alt="link"
+                 height="20"
+                 width="20"
+                 src="&#x2F;assets&#x2F;realcyc&#x2F;icon-email-ae7e05289e16.svg" />
+            <a class="foot-link" href="mailto:xiaoyiche2007@gmail.com" rel="noopener noreferrer">xiaoyiche2007@gmail.com</a>
+          </div>
+        
+      
+        
+        
+      
+        
+        
+      
+    </div>
+  
+
+
+        </div>
+      </div>
+      
+    </div>
+    <div class="copyright">
+      <a href="https:&#x2F;&#x2F;realcyc.me">cyc的个人小站</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https:&#x2F;&#x2F;hexo.io&#x2F;">Hexo</a>&nbsp;及&nbsp;
+      <svg width="20" height="20" viewBox="0 0 725 725">
+        <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+        <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+        <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+      </svg>
+      <a target="_blank" rel="noopener" href="https:&#x2F;&#x2F;github.com&#x2F;zycwer&#x2F;hexo-theme-tranquility">致远</a>&nbsp;驱动
+    </div>
+    
+    
+  </div>
+</div>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor"/></svg>
+    </button>
+    
+      
+      <script defer src="&#x2F;assets&#x2F;realcyc&#x2F;core-28b13b12ea05.js" data-search-index="&#x2F;search.json"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  </body>
+</html>
