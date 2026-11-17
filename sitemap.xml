@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://realcyc.me/</loc>
-    <lastmod>2026-11-10T06:49:46.000Z</lastmod>
+    <lastmod>2026-11-17T11:53:14.563Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://realcyc.me/2026/11/17/ran2/</loc>
+    <lastmod>2026-11-17T11:53:14.563Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://realcyc.me/2026/09/12/ran1/</loc>
